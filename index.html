@@ -830,6 +830,14 @@
       .mobile-menu .mobile-cta:hover {
         background: var(--accent);
       }
+      #typewriter::after {
+        content: "|";
+        animation: blink 0.7s infinite;
+        color: var(--accent);
+        margin-left: 2px;
+      }
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
       .fade-up {
         opacity: 0;
         transform: translateY(30px);
@@ -899,7 +907,7 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-left">
-          <div class="hero-tag">Open to Android & React Native roles</div>
+          <div class="hero-tag"><span id="typewriter">Android Developer</span></div>
           <h1>Paras<br /><span class="accent">Senjaliya</span></h1>
           <p class="hero-sub">
             Senior Mobile Developer specializing in Android & React Native —
@@ -1541,6 +1549,19 @@
         mobileMenu.classList.toggle("open");
         document.body.style.overflow = mobileMenu.classList.contains("open") ? "hidden" : "";
       });
+
+      // Typewriter effect
+      const words = ["Android Developer", "React Native Developer", "Team Lead", "Open to New Roles"];
+      let wi = 0, ci = 0, deleting = false;
+      const tw = document.getElementById("typewriter");
+      function type() {
+        const word = words[wi];
+        tw.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
+        if (!deleting && ci > word.length) { deleting = true; setTimeout(type, 1200); return; }
+        if (deleting && ci < 0) { deleting = false; wi = (wi + 1) % words.length; }
+        setTimeout(type, deleting ? 50 : 90);
+      }
+      type();
 
       // Counter animation
       function animateCounter(el, target, suffix) {
