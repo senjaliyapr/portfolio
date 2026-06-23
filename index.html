@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paras Senjaliya – Senior Mobile Developer</title>
+    <title>Paras Senjaliya – Technical Project Coordinator & Senior Mobile Developer</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
       rel="stylesheet"
@@ -99,7 +99,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 5.5rem 3rem 3rem;
+        padding: 8rem 3rem 4rem;
         position: relative;
         overflow: hidden;
         background:
@@ -289,93 +289,69 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 4rem;
+        gap: 3rem;
         width: 100%;
       }
       .hero-left {
         flex: 1;
         min-width: 0;
       }
-      .hero-right-panel {
+      .hero-right {
         flex-shrink: 0;
-        width: 420px;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid rgba(26, 106, 255, 0.15);
+        box-shadow: 0 0 0 12px rgba(26, 106, 255, 0.05);
+      }
+      .hero-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 15%;
+      }
+      .hero-avatar-fallback {
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        background: rgba(255,255,255,0.55);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-        padding: 2rem;
-        backdrop-filter: blur(8px);
-        box-shadow: 0 8px 40px rgba(0,0,0,0.05);
-      }
-      .hero-right-panel-label {
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--ink-3);
-        margin-bottom: 0.25rem;
-      }
-      .hero-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-      .hero-badge {
-        display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
-        font-size: 0.78rem;
-        font-weight: 500;
-        background: rgba(26, 106, 255, 0.07);
-        color: var(--ink-2);
-        border: 1px solid rgba(26, 106, 255, 0.15);
-        padding: 0.35rem 0.85rem;
-        border-radius: 100px;
-        letter-spacing: 0.01em;
-        transition: all 0.2s;
+        justify-content: center;
+        background: linear-gradient(135deg, #1a6aff 0%, #00b472 100%);
+        position: relative;
+        overflow: hidden;
       }
-      .hero-badge:hover {
-        background: rgba(26, 106, 255, 0.14);
-        border-color: rgba(26, 106, 255, 0.35);
-        color: var(--accent);
+      .hero-avatar-fallback::before {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.15);
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
       }
-      .hero-stats-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-      }
-      .hero-stat-box {
-        background: var(--bg);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 1rem 1.25rem;
-      }
-      .hero-stat-box strong {
-        display: block;
+      .hero-avatar-fallback::after {
+        content: "PS";
         font-family: "Syne", sans-serif;
-        font-size: 2rem;
         font-weight: 800;
-        letter-spacing: -0.04em;
-        color: var(--ink);
-        line-height: 1;
+        font-size: 4rem;
+        color: #fff;
+        letter-spacing: -0.05em;
+        position: relative;
+        z-index: 1;
       }
-      .hero-stat-box span {
-        font-size: 0.75rem;
-        color: var(--ink-3);
-        margin-top: 0.25rem;
-        display: block;
-      }
-      /* hide old inline hero-meta */
-      .hero-meta { display: none; }
-      @media (max-width: 960px) {
+      @media (max-width: 900px) {
         .hero-inner {
-          flex-direction: column;
+          flex-direction: column-reverse;
           align-items: flex-start;
         }
-        .hero-right-panel {
-          width: 100%;
+        .hero-right {
+          width: 200px;
+          height: 200px;
+          align-self: center;
         }
       }
 
@@ -880,7 +856,7 @@
           padding: 4rem 1.5rem;
         }
         .hero {
-          padding: 5rem 1.5rem 3rem;
+          padding: 7rem 1.5rem 4rem;
         }
         .about-grid {
           grid-template-columns: 1fr;
@@ -923,13 +899,27 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-left">
-          <div class="hero-tag">Open to Android & React Native roles</div>
+          <div class="hero-tag">Open to Mobile Dev & Project Coordinator roles</div>
           <h1>Paras<br /><span class="accent">Senjaliya</span></h1>
           <p class="hero-sub">
-            Senior Mobile Developer specializing in Android & React Native —
-            building high-performance, scalable apps for 8+ years. Based in Ahmedabad, India · Available immediately.
+            Technical Project Coordinator & Senior Mobile Developer specializing in Android & React Native — 8+ years delivering high-performance, scalable apps and coordinating end-to-end Agile project delivery. Based in Ahmedabad, India · Available immediately.
           </p>
-          <div class="hero-meta"></div>
+          <div class="hero-meta">
+            <div class="hero-stat">
+              <strong>8+</strong>
+              <span>Years Experience</span>
+            </div>
+            <div class="hero-stat-div"></div>
+            <div class="hero-stat">
+              <strong>15+</strong>
+              <span>Apps Delivered</span>
+            </div>
+            <div class="hero-stat-div"></div>
+            <div class="hero-stat">
+              <strong>3</strong>
+              <span>Companies Led</span>
+            </div>
+          </div>
           <div class="hero-btns">
             <a href="#experience" class="btn btn-primary">View My Work ↓</a>
             <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -947,42 +937,13 @@
             >
           </div>
         </div>
-
-        <div class="hero-right-panel">
-          <div>
-            <div class="hero-right-panel-label">Core Stack</div>
-            <div class="hero-badges">
-              <span class="hero-badge">📱 Android · Kotlin · Java</span>
-              <span class="hero-badge">⚛️ React Native · Redux</span>
-              <span class="hero-badge">🏗️ Clean Architecture · MVVM</span>
-              <span class="hero-badge">⚡ Socket.IO · Firebase · AWS</span>
-              <span class="hero-badge">🔒 OAuth 2.0 · SSL Pinning</span>
-              <span class="hero-badge">☁️ CI/CD · Gradle</span>
-              <span class="hero-badge">🧪 JUnit · Espresso</span>
-              <span class="hero-badge">🗂️ Jetpack Compose</span>
-            </div>
-          </div>
-          <div>
-            <div class="hero-right-panel-label">By the Numbers</div>
-            <div class="hero-stats-grid">
-              <div class="hero-stat-box">
-                <strong>8+</strong>
-                <span>Years Experience</span>
-              </div>
-              <div class="hero-stat-box">
-                <strong>15+</strong>
-                <span>Apps Delivered</span>
-              </div>
-              <div class="hero-stat-box">
-                <strong>3</strong>
-                <span>Companies Led</span>
-              </div>
-              <div class="hero-stat-box">
-                <strong>50M+</strong>
-                <span>Users Reached</span>
-              </div>
-            </div>
-          </div>
+        <div class="hero-right">
+          <img
+            src="https://senjaliyapr.github.io/portfolio/profile2.png"
+            alt="Paras Senjaliya"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="hero-avatar-fallback" style="display:none;"></div>
         </div>
       </div>
       <div class="hero-deco"></div>
@@ -1033,7 +994,7 @@
           </p>
           <div class="skill-tags">
             <span class="tag">React Native</span
-            ><span class="tag">JavaScript</span><span class="tag">Redux</span>
+            ><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Redux</span>
           </div>
         </div>
 
@@ -1109,6 +1070,40 @@
             ><span class="tag">CI/CD</span><span class="tag">Gradle</span>
           </div>
         </div>
+
+        <div class="skill-card fade-up">
+          <div
+            class="skill-card-icon"
+            style="background: rgba(255, 77, 28, 0.1)"
+          >
+            📋
+          </div>
+          <h3>Project Coordination</h3>
+          <p>
+            Agile/Scrum delivery, sprint planning, stakeholder management, risk tracking, and cross-team coordination across 5+ concurrent product builds.
+          </p>
+          <div class="skill-tags">
+            <span class="tag">Agile</span><span class="tag">Scrum</span
+            ><span class="tag">Asana</span><span class="tag">Basecamp</span><span class="tag">Risk Management</span>
+          </div>
+        </div>
+
+        <div class="skill-card fade-up">
+          <div
+            class="skill-card-icon"
+            style="background: rgba(108, 43, 217, 0.1)"
+          >
+            📡
+          </div>
+          <h3>IoT & Device Integration</h3>
+          <p>
+            Integration with Bluetooth Beacons and smart devices including locks and cameras for enterprise and consumer applications.
+          </p>
+          <div class="skill-tags">
+            <span class="tag">Bluetooth Beacons</span><span class="tag">Smart Devices</span
+            ><span class="tag">IoT</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1126,20 +1121,19 @@
           <div class="exp-dot"></div>
           <div class="exp-body">
             <div class="exp-tenure">3+ Years · Current</div>
-            <div class="exp-title">Team Lead & Senior Android Developer</div>
+            <div class="exp-title">Technical Project Coordinator & Senior Mobile Developer</div>
             <div class="exp-company">Nimblechapps · Ahmedabad, India</div>
             <div class="exp-project">
               <h4>🗨️ Xpress – Chat & Communication Platform</h4>
               <ul>
                 <li>
-                  Led development of a real-time messaging platform supporting
-                  chat, audio/video calls, and media sharing (similar to
-                  WhatsApp).
+                  Coordinated end-to-end delivery aligning product, engineering, and QA teams; led Agile/Scrum ceremonies — sprint planning, stand-ups, and backlog grooming across 5+ concurrent product builds.
                 </li>
                 <li>
-                  Built and scaled features including real-time messaging,
-                  translation, and AI-based enhancements using Sendbird and
-                  third-party integrations.
+                  Acted as primary stakeholder contact, gathering requirements and managing change requests; tracked timelines using Asana and Basecamp, proactively flagging risks to leadership.
+                </li>
+                <li>
+                  Built and scaled features including real-time messaging, translation, and AI-based enhancements using Sendbird, Socket.IO, and Firebase; mentored and onboarded team members through code reviews.
                 </li>
               </ul>
             </div>
@@ -1393,6 +1387,25 @@
         <div class="project-card fade-up">
           <div
             class="project-card-top"
+            style="background: linear-gradient(135deg, #fde8f0, #f9c4d8)"
+          >
+            🤝
+          </div>
+          <div class="project-card-body">
+            <h3>Warmth Matters</h3>
+            <p>
+              React Native community app with local database, offline-first data storage, and a focus on social impact and community engagement.
+            </p>
+          </div>
+          <div class="project-card-footer">
+            <span class="tag">React Native</span><span class="tag">Local Database</span
+            ><span class="tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div
+            class="project-card-top"
             style="background: linear-gradient(135deg, #e4fefe, #b4ecec)"
           >
             🔒
@@ -1440,7 +1453,7 @@
             I've worked across product-based and enterprise environments —
             leading teams, architecting systems, and taking full ownership from
             design to deployment. My work has spanned real-time communication,
-            audio streaming, IoT, location services, and e-commerce.
+            audio streaming, IoT, location services, and e-commerce. I have successfully published and managed apps on both the Google Play Store and Apple App Store.
           </p>
           <p>
             I believe in building software that's not just functional, but fast,
@@ -1478,7 +1491,7 @@
             >
               Gujarat Technological University (GTU)
             </p>
-            <span class="edu-badge">SPI: 7.2</span>
+            <span class="edu-badge">SPI: 7.5</span>
           </div>
           <div class="edu-card" style="background: rgba(26, 106, 255, 0.04)">
             <h4>Tools & Workflow</h4>
